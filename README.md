@@ -69,7 +69,7 @@ tool, the tool node updates state, and every tool node edges straight to
 - **Frontend:** React + Redux Toolkit, Google Inter font
 - **Backend:** Python, FastAPI
 - **Agent framework:** LangGraph (`StateGraph`)
-- **LLM:** Groq `gemma2-9b-it` for extraction/routing (fast + cheap),
+- **LLM:** Groq `llama-3.1-8b-instant` for extraction/routing (fast + cheap),
   `llama-3.3-70b-versatile` as a fallback for open-ended chat
 - **DB:** Postgres or MySQL via SQLAlchemy (swap the `DATABASE_URL` DSN)
 
