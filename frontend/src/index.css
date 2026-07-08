@@ -1,0 +1,254 @@
+:root {
+  --bg: #eef1f5;
+  --card: #ffffff;
+  --border: #dfe3ea;
+  --text: #1c2430;
+  --text-muted: #6b7280;
+  --accent: #2f6fed;
+  --accent-soft: #eaf1ff;
+  --danger: #d97706;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 18px 28px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 20px;
+  padding: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .app-body { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+}
+
+.card-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fbfcfe;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  color: var(--text);
+}
+
+.chip-block { margin-bottom: 12px; }
+
+.chip-block-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.chip-empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.sentiment-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.sentiment-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sentiment-emoji { font-size: 16px; }
+
+.ai-followups {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.ai-followups-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.followup-chip {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 13px;
+  padding: 4px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.followup-chip:hover { text-decoration: underline; }
+
+/* chat panel */
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 96px);
+  position: sticky;
+  top: 24px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.chat-icon { font-size: 20px; }
+
+.chat-title { font-weight: 700; font-size: 14px; }
+.chat-subtitle { font-size: 12px; color: var(--text-muted); }
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.bubble {
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 92%;
+}
+
+.bubble.assistant {
+  background: var(--accent-soft);
+  color: var(--text);
+  align-self: flex-start;
+}
+
+.bubble.user {
+  background: var(--accent);
+  color: #fff;
+  align-self: flex-end;
+}
+
+.bubble.typing { opacity: 0.6; font-style: italic; }
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.log-btn {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.log-btn:disabled { opacity: 0.6; cursor: default; }
